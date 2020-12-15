@@ -16,6 +16,7 @@ async function createModel() {
   );
 
   // check that model and metadata are loaded via HTTPS requests.
+  // also warms up the model
   await recognizer.ensureModelLoaded();
   return recognizer;
 }
@@ -49,10 +50,7 @@ function play() {
       }
     },
     {
-      includeSpectrogram: true, // in case listen should return result.spectrogram
       probabilityThreshold: 0.75,
-      invokeCallbackOnNoiseAndUnknown: true,
-      overlapFactor: 0.5, // probably want between 0.5 and 0.75. More info in README
     }
   );
 }

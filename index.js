@@ -8,6 +8,8 @@ function play() {
   ui.startPacman();
 
   // @TODO - listen to speech command model and control the game
+
+  //  to move player use - ui.move()
 }
 
 async function init() {
