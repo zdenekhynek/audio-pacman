@@ -26,7 +26,7 @@ limitations under the License.
 </head>
 <body>
   <header>
-    Turn your <b>Web Camera</b> into a controller using a <b>Neural Network</b>.
+    Turn your <b>Microphone</b> into a controller using a <b>Neural Network</b>.
   </header>
   <div id="no-webcam">
       No webcam found. <br/>
@@ -50,7 +50,7 @@ limitations under the License.
 
       <!-- Big buttons. -->
       <div class="panel-row big-buttons">
-        <button id="train">
+        <button id="train" disabled style="opacity:0.3;">
           <img width="66" height="66" src="./images/button.svg" />
           <span id="train-status">TRAIN MODEL</span>
         </button>
@@ -63,7 +63,7 @@ limitations under the License.
       <div class="panel-row params-webcam-row">
 
         <!-- Hyper params. -->
-        <div class="hyper-params">
+        <div class="hyper-params" style="opacity:0.3;">
 
           <!-- Learning rate -->
           <div class="dropdown">
@@ -131,13 +131,8 @@ limitations under the License.
 
       <div class="panel-row panel-row-top">
 
-        <div class="panel-cell panel-cell-left panel-cell-fill">
-          <p class="help-text">
-          Click to add the <br/>
-          current camera <br/>
-          view as an example <br/>
-          for that control
-          </p>
+        <div class="panel-cell panel-cell-fill">
+          
         </div><!-- ./panel-cell -->
 
         <div class="panel-cell panel-cell-center">
@@ -146,11 +141,7 @@ limitations under the License.
               <div class="thumb-box-inner">
                 <canvas class="thumb" width=224 height=224 id="up-thumb"></canvas>
               </div>
-              <button class="record-button" id="up"/><span>Add Sample</span></button>
             </div>
-            <p>
-              <span id="up-total">0</span> examples
-            </p>
           </div>
         </div><!-- ./panel-cell -->
 
@@ -165,11 +156,7 @@ limitations under the License.
               <div class="thumb-box-inner">
                 <canvas class="thumb" width=224 height=224 id="left-thumb"></canvas>
               </div>
-              <button class="record-button" id="left"/><span>Add Sample</span></button>
             </div>
-            <p>
-              <span id="left-total">0</span> examples
-            </p>
           </div>
         </div><!-- ./panel-cell -->
 
@@ -183,11 +170,7 @@ limitations under the License.
               <div class="thumb-box-inner">
                 <canvas class="thumb" width=224 height=224 id="right-thumb"></canvas>
               </div>
-              <button class="record-button" id="right"/><span>Add Sample</span></button>
             </div>
-            <p>
-              <span id="right-total">0</span> examples
-            </p>
           </div>
         </div><!-- ./panel-cell -->
 
@@ -204,11 +187,7 @@ limitations under the License.
               <div class="thumb-box-inner">
                 <canvas class="thumb" width=224 height=224 id="down-thumb"></canvas>
               </div>
-              <button class="record-button" id="down"/><span>Add Sample</span></button>
             </div>
-            <p>
-              <span id="down-total">0</span> examples
-            </p>
           </div>
         </div><!-- ./panel-cell -->
 
@@ -225,6 +204,10 @@ limitations under the License.
   <p id="copyright">PAC-MAN&trade; &copy; BANDAI NAMCO Entertainment Inc.</p>
 
   <script src="https://storage.googleapis.com/tfjs-examples/assets/webcam-transfer-learning/pacman-google.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands@0.4.0/dist/speech-commands.min.js"></script>
+  
   <script src="index.js"></script>
+
 </body>
 </html>

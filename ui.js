@@ -49,6 +49,11 @@ export function predictClass(classId) {
   document.body.setAttribute('data-active', CONTROLS[classId]);
 }
 
+export function move(direction) {
+  const index = CONTROLS.indexOf(direction);
+  predictClass(index);
+}
+
 export function isPredicting() {
   statusElement.style.visibility = 'visible';
 }
@@ -87,17 +92,17 @@ async function handler(label) {
   document.body.removeAttribute('data-active');
 }
 
-upButton.addEventListener('mousedown', () => handler(0));
-upButton.addEventListener('mouseup', () => mouseDown = false);
+// upButton.addEventListener('mousedown', () => handler(0));
+// upButton.addEventListener('mouseup', () => mouseDown = false);
 
-downButton.addEventListener('mousedown', () => handler(1));
-downButton.addEventListener('mouseup', () => mouseDown = false);
+// downButton.addEventListener('mousedown', () => handler(1));
+// downButton.addEventListener('mouseup', () => mouseDown = false);
 
-leftButton.addEventListener('mousedown', () => handler(2));
-leftButton.addEventListener('mouseup', () => mouseDown = false);
+// leftButton.addEventListener('mousedown', () => handler(2));
+// leftButton.addEventListener('mouseup', () => mouseDown = false);
 
-rightButton.addEventListener('mousedown', () => handler(3));
-rightButton.addEventListener('mouseup', () => mouseDown = false);
+// rightButton.addEventListener('mousedown', () => handler(3));
+// rightButton.addEventListener('mouseup', () => mouseDown = false);
 
 export function drawThumb(img, label) {
   if (thumbDisplayed[label] == null) {

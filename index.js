@@ -1,41 +1,20 @@
-/**
- * @license
- * Copyright 2018 Google LLC. All Rights Reserved.
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * =============================================================================
- */
-
-import * as tf from "@tensorflow/tfjs";
-import * as tfd from "@tensorflow/tfjs-data";
 import * as ui from "./ui";
 
-import { ControllerDataset } from "./controller_dataset";
+//  Location of your model trained on https://teachablemachine.withgoogle.com/
+//  Copy your unzipped model into the /dist/ folder of your project
+const URL = "http://localhost:1234/my_model/";
 
-// The number of classes we want to predict. In this example, we will be
-// predicting 4 classes for up, down, left, and right.
-const NUM_CLASSES = 4;
+function play() {
+  ui.startPacman();
+
+  // @TODO - listen to speech command model and control the game
+}
 
 async function init() {
   ui.init();
 
-  setTimeout(() => {
-    ui.startPacman();
-  }, 250);
-
-  document.addEventListener("keydown", (e) => {
-    ui.predictClass(e.keyCode);
-  });
+  // @TODO - create speech command model
 }
 
-// Initialize the application.
+document.getElementById("predict").onclick = play;
 init();
