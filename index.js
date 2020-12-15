@@ -1,3 +1,4 @@
+import * as speechCommands from '@tensorflow-models/speech-commands';
 import * as ui from "./ui";
 
 //  Location of your model trained on https://teachablemachine.withgoogle.com/

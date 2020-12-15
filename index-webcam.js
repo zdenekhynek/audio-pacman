@@ -1,9 +1,5 @@
+import * as tmImage from "@teachablemachine/image";
 import * as ui from "./ui";
-
-/*
-ADD TO INDEX.HTML
-<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
-*/
 
 // More API functions here:
 // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
@@ -53,15 +49,15 @@ async function loop() {
 async function predict() {
   // predict can take in an image, video or canvas html element
   const prediction = await model.predict(webcam.canvas);
-  const probs = prediction.map(pred => pred.probability);
+  const probs = prediction.map((pred) => pred.probability);
   const maxProbability = Math.max(...probs);
   const maxIndex = probs.indexOf(maxProbability);
-  
+
   const map = {
     0: "up",
     1: "down",
     2: "left",
-    3: "right"
+    3: "right",
   };
   const command = map[maxIndex];
   if (maxProbability > 0.5) {
